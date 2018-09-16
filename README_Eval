@@ -1,0 +1,23 @@
+My implementation for the evaluator uses the reduced grammar. If the evaluator is given multiple assignment statements with the same variable name. For example:
+
+x := 5;
+x := 6;
+
+The symbol table will store the most recent value assignment. So in my example the value 6 will be stored in the symbol table. If a variable assignment is declared and this variable isn’t present in the symbol, then a new entry will be added to the symbol table. 
+
+My modulo operator will only return integer results to mimic how modulo works in C, since the modulo operator does not operate on floats or doubles. Moreover, if you put a sign infant of a boolean character (i.e. - #t) then I will automatically change the boolean value to an integer value. For example:
+
+id a := -#t = -1
+
+The reason why I change it to an integer is because I’m assuming that the signed boolean will be used to perform operations with ints or reals. 
+
+Precedence of operations is given by brackets.
+
+NOTE: The C file has code for the scanner and parser. The code for the evaluator is above the main function.
+
+TO COMPILE AND RUN. Type the following commands in the terminal.
+
+gcc -o e4 eval_v3.c (COMPILE)
+
+./e4 (TO RUN)
+
